@@ -17,4 +17,14 @@ module.exports =  {
     const products = await Product.create(request.body);
     return response.json(products);
   },
+
+  async update(request, response) {
+    const product = await Product.findOneAndUpdate(
+      request.params.id,
+      request.body,
+      { new: true }, // tells mongoose to return a updated data
+    );
+
+    return response.json(product);
+  },
 };
