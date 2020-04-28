@@ -27,4 +27,9 @@ module.exports =  {
 
     return response.json(product);
   },
+
+  async destroy(request, response) {
+    await Product.findOneAndRemove(request.params);
+    return response.send();
+  }
 };
