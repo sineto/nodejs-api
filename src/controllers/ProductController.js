@@ -19,7 +19,7 @@ module.exports =  {
   },
 
   async update(request, response) {
-    const product = await Product.findOneAndUpdate(
+    const product = await Product.findByIdAndUpdate(
       request.params.id,
       request.body,
       { new: true }, // tells mongoose to return a updated data
