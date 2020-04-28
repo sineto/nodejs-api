@@ -29,7 +29,7 @@ module.exports =  {
   },
 
   async destroy(request, response) {
-    await Product.findOneAndRemove(request.params);
+    await Product.findByIdAndRemove(request.params.id);
     return response.send();
   }
 };
